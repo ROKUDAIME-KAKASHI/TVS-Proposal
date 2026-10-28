@@ -8,7 +8,7 @@
 <meta property="og:title" content="Carrying the TVS Way">
 <meta property="og:description" content="What TVS asked for, and how JAIN delivers it.">
 <meta property="og:type" content="website">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Carrying the TVS Way</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,8 +37,8 @@ p,h1,h2,h3,ul,ol{margin:0}
 .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:10px;margin-bottom:22px}
 .eyebrow .n{display:inline-grid;place-items:center;min-width:24px;height:24px;border-radius:12px;border:1px solid currentColor;font-size:11px;padding:0 6px}
 h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.018em;text-wrap:balance}
-h1{font-size:clamp(32px,5.6vw,78px);line-height:1.06}
-h2{font-size:clamp(26px,4.2vw,56px);line-height:1.1;max-width:18ch}
+h1{font-size:clamp(42px,5.6vw,78px);line-height:1.03}
+h2{font-size:clamp(34px,4.2vw,56px);line-height:1.06;max-width:18ch}
 h3{font-size:24px;line-height:1.2}
 .lede{font-size:clamp(18px,1.6vw,21px);line-height:1.5;max-width:46ch;margin-top:22px;text-wrap:pretty}
 .head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:end;margin-bottom:56px}
@@ -66,6 +66,17 @@ mark{background:linear-gradient(var(--marker),var(--marker)) no-repeat 0 100%/10
 .cue{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);z-index:2;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#C9B8A6;display:flex;flex-direction:column;align-items:center;gap:10px}
 .cue i{width:1px;height:38px;background:linear-gradient(#C9B8A6,transparent);display:block}
 @media (prefers-reduced-motion:no-preference){ .cue i{animation:cue 2.4s var(--out) infinite} @keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}} }
+
+/* Note of Appreciation */
+.appreciation-band{background:var(--paper);border-bottom:1px solid var(--line);padding-block:clamp(70px,9vw,110px)}
+.appreciation-card{background:var(--card);border-radius:20px;padding:clamp(28px,4.5vw,56px) clamp(22px,4.5vw,64px);box-shadow:0 0 0 1px var(--line),0 20px 40px -28px rgba(36,29,24,.35);max-width:880px;margin:0 auto}
+.appreciation-card .eyebrow{margin-bottom:18px}
+.appreciation-card h2{font-size:clamp(32px,3.8vw,48px);line-height:1.1;margin-bottom:28px}
+.appreciation-text{display:grid;gap:20px}
+.appreciation-text p{font-family:var(--serif);font-size:clamp(18px,1.65vw,21px);line-height:1.65;color:#2C231C;text-wrap:pretty}
+.appreciation-sign{margin-top:32px;padding-top:22px;border-top:1px solid var(--line);display:grid;gap:4px}
+.appreciation-valediction{font-family:var(--serif);font-style:italic;font-size:clamp(17px,1.5vw,19px);color:var(--muted)}
+.appreciation-from{font-family:var(--serif);font-size:clamp(19px,1.8vw,22px);font-weight:600;color:var(--ink)}
 
 /* Needs */
 .needs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:16px;row-gap:16px}
@@ -269,24 +280,11 @@ footer{padding:28px 0 40px;font-family:var(--mono);font-size:11px;letter-spacing
 @media (max-width:560px){
   .needs,.steps{grid-template-columns:minmax(0,1fr)}
 }
+/* Reduced motion keeps the drawing, the fades and the lighting, and drops what slides, spins or loops.
+   Many phones switch this on with battery saver, so turning everything off left phones with a still page. */
 @media (prefers-reduced-motion:reduce){
-  *{transition:none!important;animation:none!important}
-  .pre{opacity:1;transform:none}
-  .plain .w{opacity:1;filter:none;transform:none}
-}
-
-@media (max-width:680px){
-  .frames{grid-template-columns:minmax(0,1fr)}
-}
-@media (max-width:560px){
-  .wrap{padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
-  .stop{margin-left:42px;padding:20px 18px 18px}
-  .stop:nth-of-type(odd) .knot,.stop:nth-of-type(even) .knot{left:-42px;width:32px;height:32px;top:22px;font-size:12px}
-  .snake-end{margin-left:42px;padding:20px 18px}
-  .snake-title{font-size:clamp(22px,2.6vw,30px);margin:48px 0 20px}
-  .prompt{padding:20px 18px;min-height:auto}
-  .contact-card{padding:22px 18px}
-  .avatar svg{width:110px;height:110px;margin:0 auto}
+  .pre,.tvs,.plain .w,.sheet .tick,#constellation.pre text,.map-list.pre .mq,.map-list.pre .m-root{transform:none!important}
+  .plain .w{filter:none}
 }
 
 /* Team chips: one colour per JAIN team, used everywhere that team appears */
@@ -401,19 +399,19 @@ mark{-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .person path:last-child{stroke:var(--marker)}
 .doc path{fill:none;stroke:var(--powder);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 .doc .tickd{stroke:var(--marker);stroke-width:3}
-.contact-card{margin-top:44px;display:grid;grid-template-columns:150px minmax(0,1fr);gap:32px;align-items:center;background:var(--powder);color:var(--ink);border-radius:22px;padding:30px 34px;max-width:820px}
-.avatar svg{width:150px;height:150px;display:block;border-radius:50%;box-shadow:0 0 0 1px rgba(0,0,0,.08),0 14px 30px -18px rgba(36,29,24,.6)}
+.contact-card{margin-top:34px;display:grid;grid-template-columns:96px minmax(0,1fr);gap:22px;align-items:center;background:var(--powder);color:var(--ink);border-radius:18px;padding:18px 24px;max-width:680px}
+.avatar svg{width:96px;height:96px;display:block;border-radius:50%;box-shadow:0 0 0 1px rgba(0,0,0,.08),0 10px 20px -12px rgba(36,29,24,.5)}
 .avatar .bg{fill:var(--marker)}
 .avatar .hair{fill:var(--ink)}
 .avatar .face{fill:#D9A88F}
 .avatar .body{fill:#3F4A7A}
 .avatar .smile{fill:none;stroke:var(--ink);stroke-width:2.2;stroke-linecap:round}
-.contact-card .k{font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
-.contact-card h3{font-size:clamp(32px,3.4vw,44px);margin:4px 0 6px}
-.contact-card p{font-size:17px}
-.mail{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:16px}
-.addr{font-family:var(--mono);font-size:15px;-webkit-user-select:all;user-select:all;background:var(--paper);padding:9px 13px;border-radius:10px;box-shadow:0 0 0 1px var(--line);overflow-wrap:anywhere}
-#copy-mail{min-width:140px;font:600 14px var(--sans);background:var(--ink);color:var(--powder);border:0;border-radius:10px;padding:11px 18px;cursor:pointer;transition:transform .15s ease-out;-webkit-tap-highlight-color:transparent}
+.contact-card .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.contact-card h3{font-size:clamp(22px,2.4vw,28px);margin:2px 0 4px}
+.contact-card p{font-size:14.5px;margin:0}
+.mail{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+.addr{font-family:var(--mono);font-size:13.5px;-webkit-user-select:all;user-select:all;background:var(--paper);padding:7px 11px;border-radius:8px;box-shadow:0 0 0 1px var(--line);overflow-wrap:anywhere}
+#copy-mail{min-width:120px;font:600 13px var(--sans);background:var(--ink);color:var(--powder);border:0;border-radius:8px;padding:8px 14px;cursor:pointer;transition:transform .15s ease-out;-webkit-tap-highlight-color:transparent}
 #copy-mail:not(:disabled):active{transform:scale(.96)}
 #copy-mail:focus-visible{outline:2px solid var(--marker);outline-offset:2px}
 
@@ -437,10 +435,226 @@ mark{-webkit-box-decoration-break:clone;box-decoration-break:clone}
   .decide-head{margin-bottom:22px}
   .circle{aspect-ratio:auto;display:grid;gap:12px}
   .circle-svg{position:relative;height:260px}
-  .cl-centre{top:100px}
+  .cl-centre{top:100px;padding:3px 10px 4px;border-radius:999px;background:var(--paper);box-shadow:0 0 0 1.4px var(--ink);z-index:1}
   .leaders{display:none}
   .callout{position:relative;width:auto;inset:auto}
   .contact-card{grid-template-columns:minmax(0,1fr);padding:24px}
+}
+
+/* Phone: the same story, told one screen at a time. The kolam narrates (it draws itself at every chapter),
+   and the reader's thumb drives the motion that hover and wide layouts drive on a laptop. */
+.orbit-mini{display:none}
+.frame.on .fillm{opacity:.9}
+
+/* Map as one screen and orbit as a pinned dial: used wherever the wide map and orbit are hidden.
+   The map keeps the desktop's promise: the whole web at once, the TVS Way in the middle, each branch where it sits on the big screen. */
+@media (max-width:820px){
+  .map-list{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"lead sup" "c c" "des sys";column-gap:30px;row-gap:0;align-items:end}
+  .map-lines{position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:0}
+  .map-lines path{fill:none;stroke:var(--ink);stroke-width:1.4;stroke-linecap:round;transition:stroke-dashoffset 1s cubic-bezier(.25,.1,.25,1),opacity .3s ease}
+  .map-lines .pulse{fill:var(--kumkum)}
+  .map-list.pre .map-lines path{stroke-dashoffset:1!important}
+  .map-list.pre .mq,.map-list.pre .m-root{opacity:0;transform:translateY(10px)}
+  .mq,.m-root{position:relative;z-index:1;transition:opacity .6s ease,transform .9s var(--expo)}
+  .mq{display:flex;flex-direction:column;gap:12px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .q-lead,.q-sup{flex-direction:column-reverse}
+  .q-des,.q-sys{align-self:start}
+  .q-lead{grid-area:lead}.q-sup{grid-area:sup}.q-des{grid-area:des}.q-sys{grid-area:sys}
+  .q-lead,.q-des{text-align:right}
+  .m-root{grid-area:c;justify-self:center;margin:30px 0;padding:9px 18px;border-radius:999px;background:var(--neel);box-shadow:0 0 0 1.6px var(--ink);font-family:var(--serif);font-size:24px;line-height:1.1;letter-spacing:-.015em;white-space:nowrap}
+  .mq h3{position:relative;font-size:25px;line-height:1.1;margin:0}
+  .mq ul{list-style:none;padding:0;margin:0;display:grid;gap:11px}
+  .mq li{position:relative;font-size:14.5px;line-height:1.3}
+  .mq li span{display:block;margin-top:2px;font-family:var(--mono);font-size:10px;line-height:1.35;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+  .q-lead li,.q-des li,.q-lead h3,.q-des h3{padding-right:18px}
+  .q-sup li,.q-sys li,.q-sup h3,.q-sys h3{padding-left:18px}
+  .m-node{position:absolute;top:.55em;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:var(--ink);transition:background-color .4s ease,box-shadow .4s ease}
+  .mq h3 .m-node{width:11px;height:11px;margin-top:-5.5px;top:.55em}
+  .q-lead .m-node,.q-des .m-node{right:-4px}
+  .q-sup .m-node,.q-sys .m-node{left:-4px}
+  .mq h3 .m-node{background:var(--marker);box-shadow:0 0 0 1.6px var(--ink)}
+  .q-lead h3 .m-node,.q-des h3 .m-node{right:-6px}
+  .q-sup h3 .m-node,.q-sys h3 .m-node{left:-6px}
+  .mq li span .chip{font-size:11px;padding:3px 8px;margin-top:4px;box-shadow:0 0 0 1px rgba(36,29,24,.28);text-transform:none;letter-spacing:0;line-height:1.25}
+  .map-list.dim .mq:not(.hot){opacity:.28}
+  .map-list.dim .map-lines path:not(.hot),.map-list.dim .map-lines .pulse:not(.hot){opacity:.2}
+
+  .orbit-phone{position:relative;margin-top:28px}
+  .orbit-mini{display:block;position:sticky;top:0;z-index:3;margin:0 -24px;padding:max(12px,env(safe-area-inset-top,0px)) 24px 26px}
+  .orbit-mini::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--paper);-webkit-mask-image:linear-gradient(#000 82%,transparent);mask-image:linear-gradient(#000 82%,transparent)}
+  .om-stage{position:relative;width:min(56vw,230px);aspect-ratio:1/1;margin:0 auto}
+  .om-stage>svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+  .om-stage .o-centre{width:46%;padding:8px;gap:2px}
+  .om-stage .o-centre .k{font-size:8.5px;letter-spacing:.07em}
+  .om-stage .o-centre b{font-size:14px;line-height:1.12}
+  .om-stage .o-node{width:38px;height:38px}
+  .om-stage .o-node .ico{width:20px;height:20px}
+  .om-stage .o-node .n{width:18px;height:18px;font-size:10px;top:-6px;right:-6px}
+  .orbit-phone .orbit-list{margin-top:4px}
+  .orbit-phone .orbit-list li{transition:box-shadow .4s ease,opacity .4s ease;opacity:.5}
+  .orbit-phone .orbit-list li.on{opacity:1;box-shadow:0 0 0 2.5px var(--ink)}
+  .orbit-phone .orbit-list li.done{opacity:1}
+  .orbit-phone .orbit-list li.on .o-node,.orbit-phone .orbit-list li.done .o-node{background:var(--marker)}
+}
+.circle-stage{display:contents}
+.c-badge{display:none}
+
+@media (max-width:600px){
+  body{font-size:16px}
+  .wrap{padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+  .band{padding-block:72px}
+  h1{font-size:clamp(38px,11.2vw,48px);line-height:1.02}
+  h2{font-size:clamp(30px,8.4vw,37px);line-height:1.07;max-width:none}
+  .lede{font-size:17px;margin-top:16px}
+  .head{gap:14px;margin-bottom:32px}
+  .eyebrow{font-size:11px;margin-bottom:14px}
+
+  /* Hero: the kolam draws itself while the promise sits in the same first screen; it turns as you scroll on */
+  .hero{min-height:100svh;justify-content:flex-start;padding-block:max(16px,env(safe-area-inset-top,0px)) 56px}
+  .hero-grid{gap:2px}
+  .hero-kolam{width:min(96vw,44svh);max-width:none;margin:0 -20px;justify-self:center;will-change:transform}
+  .hero h1{max-width:none}
+  .hero .lede{max-width:none}
+  .cue{display:none}
+
+  /* Needs: a deck. Each card pins with its name still showing, so the deck ends as an index of all four */
+  .needs{display:block;padding-bottom:4px}
+  .needs::after{content:"";display:block;height:26svh}
+  .need{position:sticky;top:calc(max(14px,env(safe-area-inset-top,0px)) + var(--i,0) * min(74px,9.6svh));display:flex;flex-direction:column;gap:10px;margin-bottom:20px;padding:18px 20px 20px;transform-origin:50% 0;transform:scale(calc(1 - var(--cover,0) * .03));transition:opacity .6s var(--out);box-shadow:0 0 0 1px var(--line),0 -14px 30px -22px rgba(36,29,24,.5)}
+  .need::after{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--ink);opacity:calc(var(--cover,0) * .06);pointer-events:none}
+  .need .ico{position:absolute;top:16px;right:16px;width:34px;height:34px}
+  .need .tag{padding-right:44px}
+  .need h3{font-size:24px;padding-right:30px}
+  .need p.said{font-size:17px}
+  .thread-note{margin-top:28px}
+
+  /* Kolam key: the kolam and the whole key pin together; scrolling lights each part, then the whole kolam again */
+  .key{display:block}
+  .key>[data-reveal]{display:contents}
+  .key::after{content:"";display:block;height:150svh}
+  .key>.key-kolam{position:sticky;top:0;z-index:3;width:auto;justify-self:normal;max-width:none;aspect-ratio:auto;margin:0 -20px;padding:max(10px,env(safe-area-inset-top,0px)) 0 22px}
+  .key>.key-kolam::before{content:"";position:absolute;inset:0;z-index:-1;background-color:var(--wood);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='w'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.004 .32' numOctaves='3' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 .08 0 0 0 0 .05 0 0 0 0 .03 0 0 0 .55 -.18'/%3E%3C/filter%3E%3Crect width='600' height='600' filter='url(%23w)'/%3E%3C/svg%3E");-webkit-mask-image:linear-gradient(#000 84%,transparent);mask-image:linear-gradient(#000 84%,transparent)}
+  .key>.key-kolam svg{width:min(66vw,33svh);height:auto;aspect-ratio:1/1;margin:0 auto}
+  .key .legend{position:sticky;z-index:2;top:var(--kh,40svh);margin-top:22px;gap:2px}
+  .key .legend button{display:block;padding:9px 0 9px 16px;border-radius:0;opacity:.34;transition:opacity .45s ease;box-shadow:inset 2px 0 0 rgba(244,241,234,.18);-webkit-tap-highlight-color:transparent}
+  .key .legend button.on{background:none;opacity:1;box-shadow:inset 3px 0 0 var(--marker)}
+  .key .legend.all button{opacity:1}
+  .key .legend .part{display:block;margin-bottom:2px;font-size:10.5px}
+  .key .legend .means{display:block;font-size:18.5px;line-height:1.25}
+
+  /* Chapter openers: the strand badge beside the heading (it draws itself), then what you told us */
+  .o-head{display:grid;grid-template-columns:72px minmax(0,1fr);column-gap:16px;margin-bottom:36px;align-items:start}
+  .o-head>div:not(.mini){display:contents}
+  .o-head .eyebrow{grid-column:1/-1;grid-row:1}
+  .o-head .mini{grid-column:1;grid-row:2;width:72px;height:72px;margin-top:2px}
+  .o-head h2{grid-column:2;grid-row:2}
+  .o-head .said-block{grid-column:1/-1;grid-row:3;padding:16px 18px;margin-top:22px}
+  .said-block p{font-size:18px}
+  .visual{margin:4px 0 40px}
+  .teams-title{font-size:11px}
+
+  .layers{padding-left:34px}
+  .layers .spine{left:9px}
+  .layer{padding:13px 16px}
+  .layer::before{left:-31px}
+  .layer .what{font-size:18px}
+
+  /* Snake: tighter rail; the marker sweeps across each answer as the line reaches it */
+  .snake-title{margin:52px 0 22px;font-size:25px}
+  .snake{gap:20px}
+  .stop{margin-left:38px;padding:20px 18px 18px}
+  .stop:nth-of-type(odd) .knot,.stop:nth-of-type(even) .knot{left:-54px;top:22px;width:32px;height:32px;font-size:12px}
+  .snake-end{margin-left:38px;padding:20px}
+  .snake-end p{font-size:20px}
+  .prob{font-size:22px;margin-bottom:14px}
+  .gets mark{font-size:18px}
+  .stop .gets mark{background-size:0% 40%;transition:background-size 1.1s var(--expo) .15s}
+  .stop.lit .gets mark{background-size:100% 40%}
+
+  /* Paper to screen: before and after fit one screen, so the stopped press reads as one comparison */
+  .p2s{gap:0}
+  .sheet,.screen{padding:14px 16px}
+  .sheet h5,.screen h5{margin-bottom:6px}
+  .sheet .row{padding:5px 0;font-size:13.5px}
+  .sheet .tick{font-size:21px}
+  .sheet .note{font-size:20px;margin-top:6px}
+  .screen{border-radius:18px}
+  .srow{grid-template-columns:58px minmax(0,1fr) 66px;gap:10px;padding:6px 0;font-size:13px}
+  .screen p{margin-top:8px!important}
+  .arrow{font-size:10px;letter-spacing:.04em;gap:10px;padding:2px 0}
+  .arrow svg{width:30px;height:22px;margin:6px 0}
+  .proof{margin-top:24px;padding:14px 16px;font-size:15px;align-items:flex-start}
+
+  .tr{margin-top:56px;gap:20px}
+  .tr h3{font-size:26px}
+  .prompt{padding:22px 20px;min-height:380px}
+  .jargon{font-size:18px}
+  .plain{font-size:25px}
+  .tvs{font-size:20px}
+
+  /* Design: three rows; each sketch sits beside what it means and draws itself as it arrives */
+  .frames{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+  .frame{display:grid;grid-template-columns:116px minmax(0,1fr);column-gap:16px;row-gap:4px;padding:12px;align-items:center}
+  .frame svg{grid-column:1;grid-row:1/span 2;width:116px;border-radius:8px}
+  .frame h3,.frame p{grid-column:2}
+  .frame h3{font-size:21px;align-self:end}
+  .frame p{font-size:14.5px;align-self:start}
+
+  .way{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+  .way .key-kolam{order:-1;width:min(76vw,38svh);max-width:none;justify-self:center!important;margin:-16px 0 22px}
+  .uses{margin-top:26px;gap:10px}
+  .wuse{grid-template-columns:34px minmax(0,1fr);gap:14px;padding:16px}
+  .wuse .ico{width:32px;height:32px}
+  .wuse h3{font-size:20px}
+  .wuse p{font-size:15px}
+
+  .m-root{font-size:22px}
+  .mq h3{font-size:23px}
+
+  .brief-card{padding:22px 20px}
+  .impact li{font-size:19px}
+  /* TVS decides: the three-way fork stays, so the choice reads as a choice */
+  .decide{margin-top:44px}
+  .decide-head{margin-bottom:0}
+  .fork{display:block;height:46px;margin-top:8px}
+  .options{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .opt{padding:14px 8px}
+  .opt h4{font-size:19px;margin-bottom:4px}
+  .opt p{font-size:13px;line-height:1.4}
+
+  /* Guru circle: it pins, and its numbers light for the step you are reading */
+  .circle{display:block;margin-top:0}
+  .circle-stage{display:block;position:sticky;top:0;z-index:2;margin:0 -20px 6px;padding-top:max(8px,env(safe-area-inset-top,0px));background:linear-gradient(var(--haldi) 86%,rgba(236,217,166,0))}
+  .circle-svg{position:relative;display:block;height:226px}
+  .cl-centre{top:calc(max(8px,env(safe-area-inset-top,0px)) + 71px);font-size:15px}
+  .c-badge{display:grid;position:absolute;place-items:center;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;background:var(--paper);box-shadow:0 0 0 1.6px var(--ink);font-family:var(--mono);font-size:12px;transition:background-color .4s ease,transform .4s var(--out)}
+  .c-badge.on{background:var(--ink);color:var(--powder);transform:scale(1.15)}
+  .circle .callout{margin-bottom:12px;padding:16px 18px}
+  .gets-band{padding:20px;margin-top:24px}
+  .gets-band p{font-size:20px}
+
+  .start .card{padding:20px}
+  .start .card .pic{height:auto;min-height:0;margin-bottom:16px;padding:14px}
+  .start .card .pic.person,.start .card .pic.doc{display:flex;flex-direction:row;justify-content:flex-start;gap:16px}
+  .start .card .pic.person svg,.start .card .pic.doc svg{width:84px;height:64px;flex:none}
+  .start .card .pic.person p,.start .card .pic.doc p{margin:0;text-align:left}
+  .start h3{font-size:24px}
+  .contact-card{padding:16px 14px;gap:14px;border-radius:16px;margin-top:28px}
+  .avatar svg{width:76px;height:76px}
+  .contact-card h3{font-size:22px}
+  .mail{flex-direction:column;align-items:stretch}
+  .addr{font-size:clamp(11.5px,3.45vw,13px);letter-spacing:-.01em;text-align:center}
+  #copy-mail{width:100%;padding:10px 14px}
+  footer{padding-bottom:max(40px,env(safe-area-inset-bottom,0px))}
+}
+/* Phones turned sideways: the wide layout, sized for a short screen */
+@media (pointer:coarse) and (max-height:500px) and (min-width:601px){
+  .hero{padding-block:max(24px,env(safe-area-inset-top,0px)) 40px}
+  .hero h1{font-size:clamp(32px,4.6vw,44px);max-width:16ch}
+  .hero .lede{font-size:16px;margin-top:14px}
+  .hero .eyebrow{margin-bottom:12px}
+  .hero-kolam{max-width:min(420px,82svh)}
+  .cue{display:none}
 }
 </style>
 </head>
@@ -475,14 +689,33 @@ mark{-webkit-box-decoration-break:clone;box-decoration-break:clone}
       <div>
         <p class="eyebrow">JAIN University &middot; for TVS Institute for Quality and Leadership</p>
         <h1>What TVS asked for, and how JAIN delivers it.</h1>
-        <p class="lede">At Attibele you told us four things TVS needs. This page takes them one at a time: what you said, the JAIN teams that answer it, and what changes at TVS.</p>
+        <p class="lede">At Attibele you told us four things TVS would like to prioritize. This page takes them one at a time: what you said, the JAIN teams that answer it, and what changes at TVS.</p>
       </div>
       <div class="hero-kolam" aria-hidden="true"><svg id="kolam-hero"></svg></div>
     </div>
     <p class="cue" aria-hidden="true">Scroll<i></i></p>
   </header>
 
-  <!-- 2. What you told us -->
+  <!-- 2. A Note of Appreciation -->
+  <section class="band appreciation-band" id="appreciation" aria-labelledby="h-appreciation">
+    <div class="wrap">
+      <div class="appreciation-card" data-reveal>
+        <p class="eyebrow"><span class="n">&sect;</span>A Note of Appreciation</p>
+        <h2 id="h-appreciation">A Note of Appreciation</h2>
+        <div class="appreciation-text">
+          <p>On behalf of JAIN (Deemed-to-be University), we extend our sincere appreciation to the TVS Institute of Quality and Leadership (TVS IQL) for its warm hospitality and for providing us with a valuable opportunity to gain insights into its practices, initiatives, and institutional excellence.</p>
+          <p>The visit offered a meaningful platform for interaction, knowledge exchange, and exploration of potential areas of collaboration between academia and industry. We deeply appreciate the TVS IQL team&rsquo;s time, guidance, and willingness to share their experiences and perspectives.</p>
+          <p>We look forward to building on these interactions and fostering a strong, mutually beneficial partnership that drives innovation, strengthens industry&ndash;academia engagement, and creates lasting value for students, faculty, and the wider ecosystem.</p>
+        </div>
+        <div class="appreciation-sign">
+          <p class="appreciation-valediction">With sincere gratitude and appreciation,</p>
+          <p class="appreciation-from">JAIN (Deemed-to-be University)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. What you told us -->
   <section class="band" aria-labelledby="h-told">
     <div class="wrap">
       <div class="head" data-reveal>
@@ -503,9 +736,9 @@ mark{-webkit-box-decoration-break:clone;box-decoration-break:clone}
         <article class="need" data-reveal style="--d:.1s">
           <svg class="ico" aria-hidden="true"><use href="#i-plant"/></svg>
           <p class="tag">Need 2 &middot; Suppliers</p>
-          <h3>See inside your supplier plants</h3>
-          <p class="said">Many small supplier plants (MSMEs) have problems no one has written down, and your leaders need to understand them quickly.</p>
-          <div class="by"><b>Answered by</b><span class="chips"><span class="chip c-cmdc">CMDC</span><span class="chip c-design">School of Design</span><span class="chip c-fms">Management Studies</span><span class="chip c-fet">Engineering</span><span class="chip c-launch">Launchpad</span></span></div>
+          <h3>View inside your supplier plants</h3>
+          <p class="said">Many small supplier plants (MSMEs) have problems no one has written down, and your leaders need to respond to them quickly.</p>
+          <div class="by"><b>Answered by</b><span class="chips"><span class="chip c-cmdc">Centre of Management Development and Consultancy</span><span class="chip c-design">School of Design</span><span class="chip c-fms">Management Studies</span><span class="chip c-fet">Engineering</span><span class="chip c-launch">Launchpad</span></span></div>
         </article>
         <article class="need" data-reveal style="--d:.2s">
           <svg class="ico" aria-hidden="true"><use href="#i-sheet"/></svg>
@@ -518,14 +751,14 @@ mark{-webkit-box-decoration-break:clone;box-decoration-break:clone}
           <svg class="ico" aria-hidden="true"><use href="#i-pencil"/></svg>
           <p class="tag">Need 4 &middot; Design</p>
           <h3>Make ideas easy to see and teach</h3>
-          <p class="said">You want new ideas for products and accessories, and better ways to show and teach your work.</p>
+          <p class="said">You want new ideas for products and accessories, and better ways to show and present your work.</p>
           <div class="by"><b>Answered by</b><span class="chips"><span class="chip c-design">School of Design, Media and Creative Arts</span></span></div>
         </article>
       </div>
-      <p class="thread-note" data-reveal>Running through all four: <mark>the Indian way of doing things</mark>, which has its own section near the end.</p>
+    
     </div>
   </section>
-  <!-- 3. How to read the kolam -->
+  <!-- 4. How to read the kolam -->
   <section class="band woodbg" aria-labelledby="h-key">
     <div class="wrap key">
       <div class="key-kolam" aria-hidden="true"><svg id="kolam-key"></svg></div>
@@ -544,7 +777,7 @@ mark{-webkit-box-decoration-break:clone;box-decoration-break:clone}
     </div>
   </section>
 
-  <!-- 4. Leaders -->
+  <!-- 5. Leaders -->
   <section class="band" style="background:var(--haldi)" aria-labelledby="h-lead">
     <div class="wrap">
       <div class="o-head" data-reveal>
@@ -588,7 +821,7 @@ mark{-webkit-box-decoration-break:clone;box-decoration-break:clone}
           <span class="knot">3</span>
           <p class="prob-k">The problem</p>
           <h4 class="prob">Leaders make supplier decisions without seeing inside the plants.</h4>
-          <p class="solver"><span class="chip c-cmdc"><svg aria-hidden="true"><use href="#i-chat"/></svg>CMDC</span><span class="chip c-design"><svg aria-hidden="true"><use href="#i-play"/></svg>School of Design</span></p>
+          <p class="solver"><span class="chip c-cmdc"><svg aria-hidden="true"><use href="#i-chat"/></svg>Centre of Management Development and Consultancy</span><span class="chip c-design"><svg aria-hidden="true"><use href="#i-play"/></svg>School of Design</span></p>
           <p class="does">JAIN interviews suppliers, then designers turn what we find into short lessons.</p>
           <p class="gets"><span>What TVS gets</span><mark>A short brief or video on each key supplier, ready before the next review.</mark></p>
         </article>
@@ -603,7 +836,7 @@ mark{-webkit-box-decoration-break:clone;box-decoration-break:clone}
       </div>
     </div>
   </section>
-  <!-- 5. Suppliers -->
+  <!-- 6. Suppliers -->
   <section class="band" aria-labelledby="h-sup">
     <div class="wrap">
       <div class="o-head" data-reveal>
@@ -621,7 +854,7 @@ mark{-webkit-box-decoration-break:clone;box-decoration-break:clone}
           <span class="knot">1</span>
           <p class="prob-k">The problem</p>
           <h4 class="prob">No one has written down what is really slowing a supplier.</h4>
-          <p class="solver"><span class="chip c-cmdc"><svg aria-hidden="true"><use href="#i-chat"/></svg>CMDC</span></p>
+          <p class="solver"><span class="chip c-cmdc"><svg aria-hidden="true"><use href="#i-chat"/></svg>Centre of Management Development and Consultancy</span></p>
           <p class="does">JAIN's step-by-step interview method. A team sits with the owner and the line leads.</p>
           <p class="gets"><span>What TVS gets</span><mark>A plain written diagnosis for each supplier.</mark></p>
         </article>
@@ -661,7 +894,7 @@ mark{-webkit-box-decoration-break:clone;box-decoration-break:clone}
       </div>
     </div>
   </section>
-  <!-- 6. Systems -->
+  <!-- 7. Systems -->
   <section class="band" style="background:var(--neel)" aria-labelledby="h-sys">
     <div class="wrap">
       <div class="o-head" data-reveal>
@@ -750,7 +983,7 @@ mark{-webkit-box-decoration-break:clone;box-decoration-break:clone}
       </div>
     </div>
   </section>
-  <!-- 7. Design -->
+  <!-- 8. Design -->
   <section class="band" style="background:var(--laterite)" aria-labelledby="h-des">
     <div class="wrap">
       <div class="o-head" data-reveal>
@@ -778,7 +1011,7 @@ mark{-webkit-box-decoration-break:clone;box-decoration-break:clone}
     </div>
   </section>
 
-  <!-- 8. The Indian way -->
+  <!-- 9. The Indian way -->
   <section class="band woodbg" aria-labelledby="h-way">
     <div class="wrap way">
       <div data-reveal>
@@ -795,7 +1028,7 @@ mark{-webkit-box-decoration-break:clone;box-decoration-break:clone}
     </div>
   </section>
 
-  <!-- 9. How it all connects -->
+  <!-- 10. How it all connects -->
   <section class="band" style="background:var(--neel)" aria-labelledby="h-map">
     <div class="wrap">
       <div class="head" data-reveal>
@@ -810,7 +1043,7 @@ mark{-webkit-box-decoration-break:clone;box-decoration-break:clone}
     </div>
   </section>
 
-  <!-- 10. Pilot one -->
+  <!-- 11. Pilot one -->
   <section class="band" aria-labelledby="h-p1">
     <div class="wrap">
       <div class="head" data-reveal>
@@ -846,13 +1079,13 @@ mark{-webkit-box-decoration-break:clone;box-decoration-break:clone}
         <div class="options">
           <div class="opt"><h4>Scale it</h4><p>Roll the tool out to more suppliers.</p></div>
           <div class="opt"><h4>Extend it</h4><p>Add more lines or more checks at this supplier.</p></div>
-          <div class="opt"><h4>Stop it</h4><p>Keep what we learned and pick a new area.</p></div>
+          <div class="opt"><h4>Improvise it</h4><p>Keep what we learned and pick a new area.</p></div>
         </div>
       </div>
       <span class="illus">An example, chosen to show how we would work</span>
     </div>
   </section>
-  <!-- 11. Pilot two -->
+  <!-- 12. Pilot two -->
   <section class="band" style="background:var(--haldi)" aria-labelledby="h-p2">
     <div class="wrap">
       <div class="head" data-reveal>
@@ -881,7 +1114,7 @@ mark{-webkit-box-decoration-break:clone;box-decoration-break:clone}
       <div class="gets-band" data-reveal><span class="k">What TVS gets</span><p><mark>A master's skill that stays in the Dojo</mark>, and new hires who learn it faster, in a way that feels like TVS.</p></div>
     </div>
   </section>
-  <!-- 12. How we start -->
+  <!-- 13. How we start -->
   <section class="band woodbg" aria-labelledby="h-start">
     <div class="wrap">
       <div class="head" data-reveal>
@@ -889,7 +1122,7 @@ mark{-webkit-box-decoration-break:clone;box-decoration-break:clone}
           <p class="eyebrow">How we start</p>
           <h2 id="h-start">Three steps to working together</h2>
         </div>
-        <p class="lede">It starts with one area and one person. Here is what happens after you pick.</p>
+        <p class="lede">It starts with an invitation to our campus. Here is what happens next as we move from exploration to execution.</p>
       </div>
       <div class="start">
         <div class="card" data-reveal style="--d:0s">
@@ -899,21 +1132,21 @@ mark{-webkit-box-decoration-break:clone;box-decoration-break:clone}
             <p>Bring every process online</p>
             <p>Make ideas easy to see and teach</p>
           </div>
-          <span class="k">Step 1</span><h3>Choose an area you're excited about</h3><p>Pick one of the four needs to start with JAIN. For example, seeing inside your supplier plants.</p>
+          <span class="k">Step 1</span><h3>We invite you to our campus</h3><p>We warmly invite TVS teams to visit our campus to explore our capabilities firsthand, discuss focus areas, and decide where you would like to begin with JAIN.</p>
         </div>
         <div class="card" data-reveal style="--d:.1s">
           <div class="pic person" aria-hidden="true">
             <svg viewBox="0 0 160 120"><circle class="bg" cx="80" cy="60" r="52"/><circle cx="80" cy="48" r="17"/><path d="M48 104c4-22 16-32 32-32s28 10 32 32"/><path d="M118 30l10-8M124 44h12M118 58l10 8"/></svg>
-            <p>One person, one to one</p>
+            <p>Sarvottam &amp; ICE Models</p>
           </div>
-          <span class="k">Step 2</span><h3>Work with one point of contact</h3><p>JAIN gives you one person who works with you one to one to understand the problems in that area.</p>
+          <span class="k">Step 2</span><h3>Align via Sarvottam &amp; ICE models</h3><p>Following the visit, we apply our Sarvottam model and the ICE model (Industry Capability Engine) to map challenges, integrate capabilities, and co-create solutions.</p>
         </div>
         <div class="card" data-reveal style="--d:.2s">
           <div class="pic doc" aria-hidden="true">
             <svg viewBox="0 0 160 120"><path d="M46 10h52l18 18v84H46z"/><path d="M98 10v18h18"/><path d="M58 40h36M58 54h46M58 68h40M58 82h28"/><path class="tickd" d="M62 98l6 6 12-12"/></svg>
-            <p>Draft proposal</p>
+            <p>Draft Proposal &amp; Evaluation</p>
           </div>
-          <span class="k">Step 3</span><h3>Get a draft proposal</h3><p>Your contact sends a draft that starts the build and lists the changes needed. You shape it from there.</p>
+          <span class="k">Step 3</span><h3>Draft proposal, evaluation &amp; timelines</h3><p>After getting the draft proposal, a thorough evaluation will be conducted by the JU team, with project scope, deliverables, and timelines planned accordingly.</p>
         </div>
       </div>
       <div class="contact-card" data-reveal>
@@ -921,8 +1154,8 @@ mark{-webkit-box-decoration-break:clone;box-decoration-break:clone}
         <div class="who">
           <span class="k">Your JAIN University contact</span>
           <h3>Jinto Johnson</h3>
-          <p>Write to Jinto with the one area you would like to start on.</p>
-          <div class="mail"><span class="addr" id="addr">jinto.johnson@jainuniversity.ac.in</span><button type="button" id="copy-mail">Copy email</button></div>
+          <p>Connect with Jinto to schedule your campus visit and begin discussions.</p>
+          <div class="mail"><span class="addr" id="addr">jinto.johnson@<wbr>jainuniversity.ac.in</span><button type="button" id="copy-mail">Copy email</button></div>
         </div>
       </div>
     </div>
@@ -1045,8 +1278,10 @@ function drawKolam(svg, opt = {}) {
   const timing = { centre: [0, 1.4], band0: [1.0, 2.2], band1: [1.5, 2.2], band2: [2.0, 2.2] };
   for (let k = 0; k < 6; k++) timing['flower' + k] = [3.6 + k * .18, 1.2];
   all.forEach(p => { const len = p.getTotalLength(); p.style.strokeDasharray = len; p.style.strokeDashoffset = len; p.dataset.len = len; });
-  const play = () => all.forEach(p => {
-    const [d, dur] = timing[p.dataset.stage];
+  // play(part) draws that part first and the rest after it, so a chapter's own strand leads
+  const play = first => all.forEach(p => {
+    let [d, dur] = timing[p.dataset.stage];
+    if (first) d = p.dataset.stage.startsWith(first) ? (first === 'flower' ? d - 3.6 : 0) : .7 + d * .5;
     p.style.transition = `stroke-dashoffset ${dur}s cubic-bezier(.45,.05,.35,1) ${d}s`;
     p.style.strokeDashoffset = 0;
   });
@@ -1061,23 +1296,30 @@ function drawKolam(svg, opt = {}) {
 }
 
 (() => {
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // reduced motion (often switched on by battery saver) keeps line drawing and fades; it only stills what slides, spins or loops
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const noIO = !('IntersectionObserver' in window);
   const NS = 'http://www.w3.org/2000/svg';
   const el = (tag, attrs = {}, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; };
   const onView = (node, fn, threshold = .35) => {
-    if (reduce || !('IntersectionObserver' in window)) { fn(); return; }
+    if (noIO) { fn(); return; }
     new IntersectionObserver((es, o) => es.forEach(e => { if (e.isIntersecting) { fn(); o.disconnect(); } }), { threshold }).observe(node);
   };
   const below = n => n.getBoundingClientRect().top > innerHeight * .95;
+  // phones get the same story with phone-native motion; checked live so a rotation switches cleanly
+  const phoneMQ = matchMedia('(max-width:600px)'), isPhone = () => phoneMQ.matches;
+  const narrowMQ = matchMedia('(max-width:820px)'), isNarrow = () => narrowMQ.matches;
+  const phoneScrollers = [];
 
   document.querySelectorAll('.band').forEach(b => { const g = document.createElement('span'); g.className = 'grain'; g.setAttribute('aria-hidden', 'true'); b.prepend(g); });
 
   /* Kolams */
   const hero = drawKolam(document.getElementById('kolam-hero'));
-  if (reduce) hero.finish(); else requestAnimationFrame(() => requestAnimationFrame(hero.play));
+  requestAnimationFrame(() => requestAnimationFrame(hero.play));
 
-  const key = drawKolam(document.getElementById('kolam-key'));
-  key.finish();
+  const keySvg = document.getElementById('kolam-key'), key = drawKolam(keySvg);
+  // on a phone the key kolam draws itself again as you reach it; scrolling then lights each part
+  if (isPhone() && below(keySvg)) onView(keySvg, () => key.play(), .3); else key.finish();
   const legend = [...document.querySelectorAll('.legend button')];
   let auto = null, ai = 0;
   const setPart = part => { key.focus(part); legend.forEach(b => { const on = b.dataset.part === part; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); }); };
@@ -1086,22 +1328,61 @@ function drawKolam(svg, opt = {}) {
     if (matchMedia('(hover:hover)').matches) b.addEventListener('mouseenter', () => { clearInterval(auto); setPart(b.dataset.part); });
   });
   onView(document.getElementById('kolam-key'), () => {
-    if (reduce) return;
+    if (isPhone()) return;
     setPart(legend[0].dataset.part);
     auto = setInterval(() => { ai = (ai + 1) % (legend.length + 1); setPart(ai === legend.length ? null : legend[ai].dataset.part); if (ai === legend.length) clearInterval(auto); }, 2200);
   }, .5);
 
-  document.querySelectorAll('svg[data-mini]').forEach(s => { const k = drawKolam(s); k.finish(); k.focus(s.dataset.mini); });
+  // on a phone each chapter's medallion draws itself as it arrives, its own strand bright and the rest faint
+  document.querySelectorAll('svg[data-mini]').forEach(s => {
+    const k = drawKolam(s);
+    if (!isPhone() || !below(s)) { k.finish(); k.focus(s.dataset.mini); }
+    else onView(s, () => { k.play(s.dataset.mini); k.focus(s.dataset.mini); }, .45);
+  });
+
+  /* Phone: the hero kolam turns slowly as the page scrolls away from it */
+  const heroK = document.querySelector('.hero-kolam');
+  phoneScrollers.push(() => {
+    if (!isPhone() || still) { heroK.style.transform = ''; return; }
+    const y = scrollY; if (y > innerHeight * 1.4) return;
+    heroK.style.transform = `rotate(${(y * .05).toFixed(2)}deg) scale(${(1 - Math.min(1, y / innerHeight) * .06).toFixed(3)})`;
+  });
+
+  /* Phone: the kolam and the whole key pin together. Scrolling lights the centre, each strand, the flowers, then the whole kolam */
+  const keyK = document.querySelector('.key > .key-kolam'), keyBox = document.querySelector('.key'), legendBox = document.querySelector('.legend');
+  let keyPart;
+  phoneScrollers.push(() => {
+    if (!isPhone()) { legendBox.style.removeProperty('--kh'); return; }
+    const kh = keyK.offsetHeight; legendBox.style.setProperty('--kh', (kh - 6) + 'px');
+    const lr = legendBox.getBoundingClientRect(), kb = keyBox.getBoundingClientRect();
+    const run = kb.bottom - lr.bottom, total = innerHeight * 1.5;   // the room the pinned key travels through
+    let part;
+    if (lr.top > kh + 2) part = null;
+    else { const k = Math.floor((1 - run / total) * (legend.length + 1)); part = k >= 0 && k < legend.length ? legend[k].dataset.part : null; }
+    legendBox.classList.toggle('all', part === null && lr.top <= kh + 2);
+    if (part !== keyPart) { keyPart = part; clearInterval(auto); setPart(part); }
+  });
+
+  /* Phone: the four needs stack like a deck; a covered card settles back */
+  const needCards = [...document.querySelectorAll('.need')];
+  needCards.forEach((n, i) => n.style.setProperty('--i', i));
+  phoneScrollers.push(() => {
+    if (!isPhone() || still) { needCards.forEach(n => n.style.removeProperty('--cover')); return; }
+    needCards.forEach((n, i) => {
+      const nx = needCards[i + 1]; if (!nx) return;
+      const a = n.getBoundingClientRect(), b = nx.getBoundingClientRect();
+      n.style.setProperty('--cover', Math.max(0, Math.min(1, (a.bottom - b.top) / a.height)).toFixed(3));
+    });
+  });
 
   /* Reveals */
   const reveals = [...document.querySelectorAll('[data-reveal]')];
-  if (!reduce) reveals.forEach(n => { if (below(n)) { n.classList.add('pre'); onView(n, () => n.classList.remove('pre'), .15); } });
+  reveals.forEach(n => { if (below(n)) { n.classList.add('pre'); onView(n, () => n.classList.remove('pre'), .15); } });
 
   /* Layers: the line rises and lights each level from the bottom */
   const layersEl = document.getElementById('layers');
   const layerRows = [...layersEl.querySelectorAll('.layer')].reverse();
-  if (reduce) layerRows.forEach(l => l.classList.add('lit'));
-  else if (below(layersEl)) {
+  if (below(layersEl)) {
     const spine = layersEl.querySelector('.spine');
     spine.style.transform = 'scaleY(0)';
     onView(layersEl, () => {
@@ -1116,15 +1397,17 @@ function drawKolam(svg, opt = {}) {
   const runP2s = () => {
     ticks.forEach((t, i) => setTimeout(() => t.classList.add('on'), i * 260));
     setTimeout(() => note.classList.add('on'), ticks.length * 260 + 200);
-    setTimeout(() => screen.classList.add('on'), ticks.length * 260 + 900);
+    if (!isPhone()) setTimeout(() => screen.classList.add('on'), ticks.length * 260 + 900);
   };
-  if (reduce) { ticks.forEach(t => t.classList.add('on')); note.classList.add('on'); screen.classList.add('on'); } else onView(p2s, runP2s, .45);
+  // on a phone the live screen sits below the sheet, so it comes alive when it arrives
+  if (isPhone()) onView(screen, () => setTimeout(() => screen.classList.add('on'), 300), .6);
+  onView(p2s, runP2s, .45);
 
   /* Translator */
   const PAIRS = [
     ['Industrial IoT', 'Machines report how they are running, live.', 'Supervisors see a stalled machine as it happens.'],
     ['AI and dashboards', 'The daily report builds itself from the shop floor.', 'The morning meeting starts with the numbers already on screen.'],
-    ['CMDC interviews', 'We sit with each supplier and find the real problem.', 'Leaders know what a supplier needs before the next order.'],
+    ['Centre of Management Development and Consultancy interviews', 'We sit with each supplier and find the real problem.', 'Leaders know what a supplier needs before the next order.'],
     ['EV and powertrain labs', 'A lab and a student team for your EV questions.', 'EV ideas get tested on a bench before TVS spends on them.'],
     ['Credit-bearing courses', 'Short courses that earn credit toward a JAIN degree.', 'The training your people take adds up to a qualification.'],
     ['Video capsules', 'Short video lessons, made by JAIN’s design school.', 'A leader learns a supplier’s story in a few minutes.']
@@ -1166,21 +1449,20 @@ function drawKolam(svg, opt = {}) {
     }
     running = false;
   }
-  const jump = i => { next = i; cancelAll(); if (reduce) showStatic(i); else if (!running && visible) loop(); };
+  const jump = i => { next = i; cancelAll(); if (noIO) showStatic(i); else if (!running && visible) loop(); };
   const showStatic = i => { const [j, p, t] = PAIRS[i]; countEl.textContent = `${i + 1} of ${PAIRS.length} · We call it`; jText.textContent = j; plainEl.textContent = p; tvsEl.querySelector('.hl').textContent = t; tvsEl.classList.add('on'); bars.forEach((b, k) => b.className = k <= i ? 'done' : ''); };
   bars.forEach((b, i) => { b.addEventListener('click', () => jump(i)); b.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); jump(i); } }); });
-  if (!reduce) new IntersectionObserver(es => es.forEach(e => { visible = e.isIntersecting; if (visible) loop(); else cancelAll(); }), { threshold: .4 }).observe(document.querySelector('.prompt'));
+  if (!noIO) new IntersectionObserver(es => es.forEach(e => { visible = e.isIntersecting; if (visible) loop(); else cancelAll(); }), { threshold: .4 }).observe(document.querySelector('.prompt'));
   else showStatic(0);
 
-  /* Design frames draw themselves */
+  /* Design frames draw themselves: all at once on a wide screen, one by one as you swipe on a phone */
   const frames = document.getElementById('frames');
   const drawPaths = [...frames.querySelectorAll('.draw')];
-  if (!reduce && below(frames)) {
+  const drawThese = ps => ps.forEach((p, i) => { p.style.transition = `stroke-dashoffset 1.4s cubic-bezier(.45,.05,.35,1) ${(i % 6) * .12 + Math.floor(i / 6) * .1}s`; p.style.strokeDashoffset = 0; setTimeout(() => { if (p.dataset.dash) p.style.strokeDasharray = p.dataset.dash; }, 2400); });
+  if (below(frames)) {
     drawPaths.forEach(p => { const L = p.getTotalLength(); p.dataset.dash = p.getAttribute('stroke-dasharray') || ''; p.style.strokeDasharray = L; p.style.strokeDashoffset = L; });
-    onView(frames, () => {
-      drawPaths.forEach((p, i) => { p.style.transition = `stroke-dashoffset 1.4s cubic-bezier(.45,.05,.35,1) ${(i % 6) * .12 + Math.floor(i / 6) * .1}s`; p.style.strokeDashoffset = 0; setTimeout(() => { if (p.dataset.dash) p.style.strokeDasharray = p.dataset.dash; }, 2400); });
-      frames.classList.add('on');
-    }, .35);
+    if (isPhone()) [...frames.children].forEach(fr => onView(fr, () => { drawThese([...fr.querySelectorAll('.draw')]); fr.classList.add('on'); }, .6));
+    else onView(frames, () => { drawThese(drawPaths); frames.classList.add('on'); }, .35);
   } else frames.classList.add('on');
 
 
@@ -1204,7 +1486,6 @@ function drawKolam(svg, opt = {}) {
     drawSnake(s);
   };
   const drawSnake = s => {
-    if (reduce) { s.line.style.strokeDashoffset = 0; s.stops.forEach(st => st.classList.add('lit')); return; }
     const top = s.sn.getBoundingClientRect().top;
     const reach = Math.max(0, Math.min(s.h, innerHeight * .62 - top));
     s.line.style.strokeDashoffset = s.L * (1 - reach / s.h);
@@ -1218,8 +1499,8 @@ function drawKolam(svg, opt = {}) {
 
   /* Pilot one: five steps orbit the project; a dot travels the ring and lights each step */
   const ORBIT = [
-    ['Listen', 'JAIN interviews the supplier and the TVS buyer.', [['c-cmdc', 'CMDC']], 'i-chat', -90],
-    ['Find', 'The team marks where paper slows the line down.', [['c-cmdc', 'CMDC']], 'i-sheet', -18],
+    ['Listen', 'JAIN interviews the supplier and the TVS buyer.', [['c-cmdc', 'Centre of Management Development and Consultancy']], 'i-chat', -90],
+    ['Find', 'The team marks where paper slows the line down.', [['c-cmdc', 'Centre of Management Development and Consultancy']], 'i-sheet', -18],
     ['Build', 'Students fit sensors and build a tablet form. Designers make it easy to use.', [['c-fet', 'FET'], ['c-csit', 'CS and IT'], ['c-design', 'Design']], 'i-chip', 54],
     ['Prove', 'It runs on the real line. The supplier and TVS check that it works.', [['c-tvs', 'TVS and supplier']], 'i-gauge', 126],
     ['Teach', 'A short video tells TVS leaders what this supplier needs.', [['c-design', 'School of Design']], 'i-play', 198]
@@ -1241,7 +1522,7 @@ function drawKolam(svg, opt = {}) {
     return { node, a };
   });
   const oDot = orbit.querySelector('.o-dot');
-  if (reduce) { oNodes.forEach(n => n.node.classList.add('lit')); oDot.style.display = 'none'; }
+  if (still) { oNodes.forEach(n => n.node.classList.add('lit')); oDot.style.display = 'none'; }
   else {
     const PERIOD = 11000; let t0 = null;
     const spin = now => {
@@ -1254,6 +1535,54 @@ function drawKolam(svg, opt = {}) {
     onView(orbit, () => requestAnimationFrame(spin), .3);
   }
 
+  /* Narrow screens: the orbit becomes a dial that pins while you read the five steps; the dot moves to the step you are on */
+  const oPhone = document.createElement('div'); oPhone.className = 'orbit-phone';
+  olist.before(oPhone);
+  const oMini = document.createElement('div'); oMini.className = 'orbit-mini'; oMini.setAttribute('aria-hidden', 'true');
+  const MR = 112;
+  oMini.innerHTML = `<div class="om-stage"><svg viewBox="0 0 300 300"><circle class="ring" cx="150" cy="150" r="${MR}"/><circle class="o-dot" r="7" cx="150" cy="${150 - MR}"/></svg><div class="o-centre"><span class="k">How we get there</span><b>Five steps around one project</b></div></div>`;
+  const omStage = oMini.firstChild;
+  const mNodes = ORBIT.map(([t, p, cs, ic, a], i) => {
+    const r = a * Math.PI / 180, n = document.createElement('span'); n.className = 'o-node';
+    n.style.left = (50 + MR / 3 * Math.cos(r)) + '%'; n.style.top = (50 + MR / 3 * Math.sin(r)) + '%';
+    n.innerHTML = `<svg class="ico" aria-hidden="true"><use href="#${ic}"/></svg><span class="n">${i + 1}</span>`;
+    omStage.appendChild(n); return n;
+  });
+  oPhone.append(oMini, olist);
+  const mDot = oMini.querySelector('.o-dot'), oItems = [...olist.children];
+  let mAng = -90, mTarget = -90, mRaf = null, mActive = -2;
+  const mMove = () => {
+    mAng += (mTarget - mAng) * (still ? 1 : .1); if (Math.abs(mTarget - mAng) < .2) mAng = mTarget;
+    const r = mAng * Math.PI / 180; mDot.setAttribute('cx', 150 + MR * Math.cos(r)); mDot.setAttribute('cy', 150 + MR * Math.sin(r));
+    mRaf = mAng === mTarget ? null : requestAnimationFrame(mMove);
+  };
+  let mLap = false;
+  const dialScroll = () => {
+    if (!isNarrow() || mLap) return;
+    const mb = oMini.getBoundingClientRect().bottom, line = mb + (innerHeight - mb) * .35;
+    let act = -1; oItems.forEach((li, i) => { if (li.getBoundingClientRect().top <= line) act = i; });
+    if (act === mActive) return; mActive = act;
+    oItems.forEach((li, i) => { li.classList.toggle('on', i === act); li.classList.toggle('done', i < act); });
+    mNodes.forEach((n, i) => n.classList.toggle('lit', i <= act));
+    mTarget = act < 0 ? -90 : ORBIT[act][4];
+    if (!mRaf) mRaf = requestAnimationFrame(mMove);
+  };
+  phoneScrollers.push(dialScroll);
+  // when the dial arrives, the dot runs one lap and lights each step, as it keeps doing on a wide screen; then your scroll takes over
+  if (!still) onView(oMini, () => {
+    if (!isNarrow()) return;
+    mLap = true; if (mRaf) { cancelAnimationFrame(mRaf); mRaf = null; }
+    const t0 = performance.now(), D = 2800;
+    const run = now => {
+      const k = Math.min(1, (now - t0) / D), e = k < .5 ? 2 * k * k : 1 - (2 - 2 * k) ** 2 / 2, deg = -90 + 360 * e, r = deg * Math.PI / 180;
+      mDot.setAttribute('cx', 150 + MR * Math.cos(r)); mDot.setAttribute('cy', 150 + MR * Math.sin(r));
+      mNodes.forEach((n, i) => n.classList.toggle('lit', k < 1 && deg >= ORBIT[i][4] - 2));
+      if (k < 1) return requestAnimationFrame(run);
+      mLap = false; mAng = -90; mActive = -2; dialScroll();
+    };
+    requestAnimationFrame(run);
+  }, .6);
+
   /* Pilot two: the guru teaches the ring of new hires; the four stages take turns */
   const circleSvg = document.querySelector('.circle-svg'), hires = circleSvg.querySelector('.hires');
   const NS2 = 'http://www.w3.org/2000/svg';
@@ -1262,7 +1591,7 @@ function drawKolam(svg, opt = {}) {
     const ln = document.createElementNS(NS2, 'path'); ln.setAttribute('class', 't');
     const sx = 500 + 58 * Math.cos(r), sy = 320 + 58 * Math.sin(r), ex = 500 + 98 * Math.cos(r), ey = 320 + 98 * Math.sin(r);
     ln.setAttribute('d', `M${sx} ${sy} L${ex} ${ey}`); hires.appendChild(ln);
-    const L = Math.hypot(ex - sx, ey - sy); ln.style.strokeDasharray = L; ln.style.strokeDashoffset = reduce ? 0 : L;
+    const L = Math.hypot(ex - sx, ey - sy); ln.style.strokeDasharray = L; ln.style.strokeDashoffset = L;
     const c = document.createElementNS(NS2, 'circle'); c.setAttribute('class', 'h'); c.setAttribute('cx', x); c.setAttribute('cy', y); c.setAttribute('r', 17); hires.appendChild(c);
     const hd = document.createElementNS(NS2, 'circle'); hd.setAttribute('cx', x); hd.setAttribute('cy', y - 4); hd.setAttribute('r', 5); hd.setAttribute('fill', 'var(--ink)'); hires.appendChild(hd);
     return { ln, c, L };
@@ -1270,11 +1599,30 @@ function drawKolam(svg, opt = {}) {
   const callouts = [...document.querySelectorAll('.callout')];
   const evenCallouts = () => { callouts.forEach(c => c.style.minHeight = ''); if (innerWidth <= 820) return; const h = Math.max(...callouts.map(c => c.offsetHeight)); callouts.forEach(c => c.style.minHeight = h + 'px'); };
   evenCallouts(); addEventListener('resize', evenCallouts); document.fonts && document.fonts.ready.then(evenCallouts);
-  if (reduce) hireEls.forEach(h => h.c.classList.add('on'));
-  else onView(document.getElementById('circle'), () => {
+  // on a phone the circle is cropped to fill the width, and the callout you are reading is the one outlined
+  const fitCircle = () => circleSvg.setAttribute('viewBox', isPhone() ? '300 120 400 400' : '0 0 1000 640');
+  fitCircle(); phoneMQ.addEventListener('change', fitCircle);
+  // the circle and its label sit in one stage that pins on a phone; four numbers on the ring match the four callouts
+  const cStage = document.createElement('div'); cStage.className = 'circle-stage';
+  const circleBox = document.getElementById('circle');
+  circleBox.prepend(cStage); cStage.append(circleSvg, circleBox.querySelector('.cl-centre'));
+  const P = 'max(8px,env(safe-area-inset-top,0px))';
+  const badges = [[-76, 37], [76, 37], [76, 189], [-76, 189]].map(([dx, dy], i) => {
+    const b = document.createElement('span'); b.className = 'c-badge'; b.setAttribute('aria-hidden', 'true'); b.textContent = i + 1;
+    b.style.left = `calc(50% + ${dx}px)`; b.style.top = `calc(${P} + ${dy}px)`; cStage.appendChild(b); return b;
+  });
+  phoneScrollers.push(() => {
+    if (!isPhone()) return;
+    const sb = cStage.getBoundingClientRect().bottom, line = sb + (innerHeight - sb) * .3;
+    let act = -1; callouts.forEach((c, i) => { if (c.getBoundingClientRect().top <= line) act = i; });
+    if (callouts[callouts.length - 1].getBoundingClientRect().bottom < sb) act = -1;
+    callouts.forEach((c, i) => c.classList.toggle('on', i === act));
+    badges.forEach((b, i) => b.classList.toggle('on', i === act));
+  });
+  onView(document.getElementById('circle'), () => {
     let stage = 0;
     const step = () => {
-      callouts.forEach((c, i) => c.classList.toggle('on', i === stage));
+      if (!isPhone()) callouts.forEach((c, i) => c.classList.toggle('on', i === stage));
       if (stage === 0) hireEls.forEach((h, i) => {
         h.ln.style.transition = 'none'; h.ln.style.strokeDashoffset = h.L; h.c.classList.remove('on');
         setTimeout(() => { h.ln.style.transition = 'stroke-dashoffset .5s ease-out'; h.ln.style.strokeDashoffset = 0; setTimeout(() => h.c.classList.add('on'), 450); }, 120 + i * 260);
@@ -1286,7 +1634,7 @@ function drawKolam(svg, opt = {}) {
 
   /* Start: the hand-drawn ring circles the example choice */
   const ringDraw = document.querySelector('.ring-draw');
-  if (ringDraw && !reduce) {
+  if (ringDraw) {
     const L = ringDraw.getTotalLength(); ringDraw.style.strokeDasharray = L; ringDraw.style.strokeDashoffset = L;
     onView(ringDraw.closest('.card'), () => { ringDraw.style.transition = 'stroke-dashoffset 1.1s cubic-bezier(.45,.05,.35,1) .3s'; ringDraw.style.strokeDashoffset = 0; }, .5);
   }
@@ -1328,7 +1676,6 @@ function drawKolam(svg, opt = {}) {
     line('M94 106Q100 109 106 106', 2);
     // the turmeric knot, the same mark every section uses
     mk('circle', { cx: 100, cy: 157, r: 6, fill: 'var(--marker)', stroke: 'var(--ink)', 'stroke-width': 1.5 });
-    if (reduce) return;
     lines.forEach(p => { const L = p.getTotalLength(); p.style.strokeDasharray = L; p.style.strokeDashoffset = L; });
     onView(s, () => lines.forEach((p, i) => { p.style.transition = `stroke-dashoffset ${i < 2 ? 2.2 : 1.1}s cubic-bezier(.45,.05,.35,1) ${i < 2 ? i * .25 : .6 + (i - 2) * .22}s`; p.style.strokeDashoffset = 0; }), .5);
   })();
@@ -1351,7 +1698,7 @@ function drawKolam(svg, opt = {}) {
         [430, 72, 'The Indian way, taught', 'Indian Knowledge Systems'] ] },
       { id: 'sup', x: 800, y: 185, label: 'Suppliers', leaves: [
         [680, 72, 'New ventures together', 'JAIN Launchpad'],
-        [930, 72, 'Each supplier’s real problem', 'CMDC'],
+        [930, 72, 'Each supplier’s real problem', 'Centre of Management Development and Consultancy'],
         [975, 205, 'Short lessons for leaders', 'School of Design'],
         [960, 318, 'Shop-floor upgrades', 'Engineering and Computer Science'] ] },
       { id: 'sys', x: 800, y: 530, label: 'Systems', leaves: [
@@ -1380,7 +1727,8 @@ function drawKolam(svg, opt = {}) {
   [...svg.querySelectorAll('[data-g]')].forEach(e => e.classList.add('g'));
   const setHot = g => { svg.classList.toggle('dim', !!g); svg.querySelectorAll('.g').forEach(e => e.classList.toggle('hot', e.dataset.g === g || e.dataset.g === 'centre')); };
   if (matchMedia('(hover:hover)').matches) svg.querySelectorAll('.g').forEach(e => { if (e.dataset.g === 'centre') return; e.addEventListener('mouseenter', () => setHot(e.dataset.g)); e.addEventListener('mouseleave', () => setHot(null)); });
-  if (!reduce) {
+  if (!noIO && below(svg)) { svg.classList.add('pre'); onView(svg, () => svg.classList.remove('pre'), .3); }
+  if (!still) {
     const pulses = edges.map((e, i) => ({ e, c: el('circle', { r: 2.6, class: 'pulse g', 'data-g': e.g, opacity: 0 }, gDots), off: Math.random() * 4000 + i * 230 }));
     const tick = now => {
       if (!svg.classList.contains('pre')) for (const p of pulses) {
@@ -1391,9 +1739,70 @@ function drawKolam(svg, opt = {}) {
       requestAnimationFrame(tick);
     };
     setTimeout(() => requestAnimationFrame(tick), 1500);
-    if (below(svg)) { svg.classList.add('pre'); onView(svg, () => svg.classList.remove('pre'), .3); }
   }
-  document.getElementById('map-list').innerHTML = MAP.branches.map(b => `<section><h3>${b.label}</h3><ul>${b.leaves.map(l => `<li>${l[2]}<span>${l[3]}</span></li>`).join('')}</ul></section>`).join('');
+  /* Narrow screens: the whole map on one screen. The TVS Way in the middle, each branch where it sits on the big screen,
+     lines drawn out from the centre with the same kumkum pulses. Tap a branch to focus it. */
+  const mapList = document.getElementById('map-list');
+  const TEAM_CHIP = { 'Management Studies': 'c-fms', 'JAIN Online': 'c-online', 'Indian Knowledge Systems': 'c-iks', 'JAIN Launchpad': 'c-launch', 'CMDC': 'c-cmdc', 'Centre of Management Development and Consultancy': 'c-cmdc', 'School of Design': 'c-design', 'Engineering and Computer Science': 'c-fet', 'CS and IT': 'c-csit', 'Electronics and Communication': 'c-fet', 'Electrical and Electronics': 'c-fet', 'FET with CS and IT': 'c-fet' };
+  const mn = '<i class="m-node" aria-hidden="true"></i>';
+  mapList.innerHTML = `<svg class="map-lines" aria-hidden="true"><g class="ml"></g><g class="mp"></g></svg><p class="m-root">${MAP.c.label}</p>` +
+    MAP.branches.map(b => `<section class="mq q-${b.id}" data-g="${b.id}"><h3>${mn}${b.label}</h3><ul>${b.leaves.map(l => `<li>${mn}${l[2]}<span><b class="chip ${TEAM_CHIP[l[3]] || 'c-tvs'}">${l[3]}</b></span></li>`).join('')}</ul></section>`).join('');
+  const mLines = mapList.querySelector('.ml'), mPulses = mapList.querySelector('.mp'), mSvg = mapList.querySelector('.map-lines');
+  let mPaths = [];
+  const buildMap = () => {
+    if (!mapList.offsetHeight) return;
+    const r = mapList.getBoundingClientRect(), root = mapList.querySelector('.m-root').getBoundingClientRect();
+    mSvg.setAttribute('viewBox', `0 0 ${r.width} ${r.height}`);
+    const cx = root.left - r.left + root.width / 2, top = root.top - r.top, bot = root.bottom - r.top;
+    const at = n => { const k = n.getBoundingClientRect(); return [k.left - r.left + k.width / 2, k.top - r.top + k.height / 2]; };
+    mLines.innerHTML = ''; mPaths = [];
+    mapList.querySelectorAll('.mq').forEach((q, qi) => {
+      const g = q.dataset.g, nodes = [...q.querySelectorAll('.m-node')], [bx, by] = at(nodes[0]);
+      const up = by < top, y0 = up ? top : bot, far = nodes.slice(1).map(n => at(n)[1]);
+      const yFar = up ? Math.min(...far) : Math.max(...far), bend = up ? -1 : 1;
+      // from the centre out to the branch, then along the branch past every team
+      const d = `M${cx} ${y0} C${cx} ${y0 + bend * 26} ${bx} ${by - bend * 30} ${bx} ${by} L${bx} ${yFar}`;
+      const p = el('path', { d, pathLength: 1, class: 'g', 'data-g': g }, mLines);
+      p.style.strokeDasharray = 1; p.style.transitionDelay = (.1 + qi * .12) + 's';
+      mPaths.push({ p, g, L: p.getTotalLength() });
+    });
+    mPulses.innerHTML = '';
+    mPaths.forEach((m, i) => { m.dots = [0, .5].map(off => ({ off: off + i * .13, c: el('circle', { r: 3, class: 'pulse', 'data-g': m.g, opacity: 0 }, mPulses) })); });
+  };
+  addEventListener('resize', buildMap); addEventListener('load', buildMap);
+  document.fonts && document.fonts.ready.then(buildMap);
+  buildMap();
+  // tap a branch to focus it, tap again (or another) to change
+  mapList.querySelectorAll('.mq').forEach(q => q.addEventListener('click', () => {
+    const on = !q.classList.contains('hot');
+    mapList.querySelectorAll('.mq').forEach(o => o.classList.toggle('hot', on && o === q));
+    mapList.classList.toggle('dim', on);
+    mSvg.querySelectorAll('[data-g]').forEach(e => e.classList.toggle('hot', on && e.dataset.g === q.dataset.g));
+  }));
+  if (!noIO && below(mapList)) { mapList.classList.add('pre'); onView(mapList, () => mapList.classList.remove('pre'), .25); }
+  if (!still && !noIO) {
+    let mVis = false, mRun = false;
+    const mTick = now => {
+      if (!mVis) { mRun = false; return; }
+      if (!mapList.classList.contains('pre')) mPaths.forEach(m => m.dots.forEach(d => {
+        const k = ((now / 4600) + d.off) % 1, pt = m.p.getPointAtLength(k * m.L);
+        d.c.setAttribute('cx', pt.x); d.c.setAttribute('cy', pt.y); d.c.setAttribute('opacity', (Math.sin(Math.PI * k) * .9).toFixed(2));
+      }));
+      requestAnimationFrame(mTick);
+    };
+    new IntersectionObserver(es => es.forEach(e => { mVis = e.isIntersecting; if (mVis && !mRun) { mRun = true; requestAnimationFrame(mTick); } })).observe(mapList);
+  }
+
+  /* Safety net for fast flicks: nothing that is on screen or already passed stays hidden */
+  phoneScrollers.push(() => { document.querySelectorAll('.pre').forEach(n => { if (n.getBoundingClientRect().top < innerHeight * .92) n.classList.remove('pre'); }); });
+
+  /* One scroll loop drives every phone moment */
+  let pTick = false;
+  const runPhone = () => { pTick = false; phoneScrollers.forEach(f => f()); };
+  addEventListener('scroll', () => { if (!pTick) { pTick = true; requestAnimationFrame(runPhone); } }, { passive: true });
+  addEventListener('resize', runPhone); addEventListener('load', runPhone);
+  document.fonts && document.fonts.ready.then(runPhone);
+  runPhone();
 })();
 </script>
 </body>
